@@ -36,7 +36,7 @@ It returns an array where each row contains these values - **[ start point, end 
     img = cv2.imread('star.jpg')
     img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(img_gray, 127, 255,0)
-    contours,hierarchy = cv2.findContours(thresh,2,1)
+    thresh, contours,hierarchy = cv2.findContours(thresh,2,1)
     cnt = contours[0]
 
     hull = cv2.convexHull(cnt,returnPoints = False)
@@ -88,9 +88,9 @@ OpenCV comes with a function **cv2.matchShapes()** which enables us to compare t
 
     ret, thresh = cv2.threshold(img1, 127, 255,0)
     ret, thresh2 = cv2.threshold(img2, 127, 255,0)
-    contours,hierarchy = cv2.findContours(thresh,2,1)
+    thresh, contours,hierarchy = cv2.findContours(thresh,2,1)
     cnt1 = contours[0]
-    contours,hierarchy = cv2.findContours(thresh2,2,1)
+    thresh2, contours,hierarchy = cv2.findContours(thresh2,2,1)
     cnt2 = contours[0]
 
     ret = cv2.matchShapes(cnt1,cnt2,1,0.0)

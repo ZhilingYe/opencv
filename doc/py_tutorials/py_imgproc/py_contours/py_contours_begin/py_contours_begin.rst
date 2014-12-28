@@ -43,18 +43,18 @@ To draw the contours, ``cv2.drawContours`` function is used. It can also be used
 To draw all the contours in an image:
 ::
 
-    cv2.drawContours(img, contours, -1, (0,255,0), 3)
+    img = cv2.drawContours(img, contours, -1, (0,255,0), 3)
 
 To draw an individual contour, say 4th contour:
 ::
 
-    cv2.drawContours(img, contours, 3, (0,255,0), 3)
+    img = cv2.drawContours(img, contours, 3, (0,255,0), 3)
 
 But most of the time, below method will be useful:
 ::
 
     cnt = contours[4]
-    cv2.drawContours(img, [cnt], 0, (0,255,0), 3)
+    img = cv2.drawContours(img, [cnt], 0, (0,255,0), 3)
 
 .. note:: Last two methods are same, but when you go forward, you will see last one is more useful.
 

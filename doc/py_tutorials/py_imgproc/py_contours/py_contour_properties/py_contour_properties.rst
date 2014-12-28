@@ -79,7 +79,7 @@ In some cases, we may need all the points which comprises that object. It can be
 ::
 
     mask = np.zeros(imgray.shape,np.uint8)
-    cv2.drawContours(mask,[cnt],0,255,-1)
+    mask = cv2.drawContours(mask,[cnt],0,255,-1)
     pixelpoints = np.transpose(np.nonzero(mask))
     #pixelpoints = cv2.findNonZero(mask)
 
